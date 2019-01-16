@@ -3,10 +3,6 @@ html {
 }
 
 body {
-  /* Photo by Lydia Torrey on Unsplash */
-  background: url('https://images.unsplash.com/photo-1518914781460-a3ada465edec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
-  background-size: cover;
-  background-position: center;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -26,6 +22,10 @@ body {
   padding: 40vh 0 0;
   height: 100vh;
   display: block;
+  /* Photo by Lydia Torrey on Unsplash */
+  background: url('https://images.unsplash.com/photo-1518914781460-a3ada465edec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+  background-size: cover;
+  background-position: center;
 }
 
 #header {
