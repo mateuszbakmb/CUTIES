@@ -57,9 +57,31 @@ body {
   flex-wrap: wrap;
 }
 
+.btn {
+  background-color: #f2668a;
+  border-color: #f2668a;
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: #ed4a74;
+  border-color: #ed4a74;
+  color: #fff;
+}
+
+.btn:focus, .btn:active {
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(242,102,138,1);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(242,102,138,1);
+  box-shadow: 0px 0px 5px 1px rgba(242,102,138,1);
+}
+
 #gallery .container .row>[class*='col-'] {
   display: flex;
   flex-direction: column;
+}
+
+form h2 {
+  font-weight: bold;
 }
 
 footer {
