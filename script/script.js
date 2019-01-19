@@ -13,30 +13,31 @@ window.addEventListener('scroll', function(event) {
     }
 });
 
-const gallery = nav.querySelector("[href='#gallery']");
-gallery.addEventListener("click", function(e){
-  e.preventDefault();
-document.querySelector('#gallery').scrollIntoView({behavior: 'smooth', block: 'start'})
+//navigation
+let href = nav.querySelectorAll("a[href]").forEach(elem=> {
+  //Im not even sure if thats a good practice to refresh the page on clicking on a brand name/logo
+  //but it seemed as a better idea than doing the same thing as clicking on 'Home' does
+  if(elem.id==="brand"){
+    elem.addEventListener("click", function(e){
+      e.preventDefault();
+      window.location.reload();
+    })
+  } else if (elem.getAttribute('href')==="#navi"){
+    elem.addEventListener("click", function(e){
+      e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    })
+  }
+
+  elem.addEventListener('click', moveTo)
+
+  function moveTo(e){
+    e.preventDefault();
+    document.querySelector(elem.getAttribute('href')).scrollIntoView({behavior: 'smooth', block: 'start'});
+  }
 })
 
-const submit = nav.querySelector("[href='#submitPic']");
-submit.addEventListener("click", function(e){
-  e.preventDefault();
-document.querySelector('#submitPic').scrollIntoView({behavior: 'smooth', block: 'start'})
-})
-
-const home = nav.querySelector("[href='#navi']");
-home.addEventListener("click", function(e){
-  e.preventDefault();
-window.scrollTo({ top: 0, behavior: 'smooth' });
-})
-
-const brand = document.querySelector('#brand')
-brand.addEventListener("click", function(e){
-  e.preventDefault();
-  window.location.reload();
-})
-
+//scroll to top of the page on reloading
 window.onbeforeunload = ()=> {
   window.scrollTo(0, 0);
 }
@@ -47,7 +48,7 @@ showFile.addEventListener("change", function(){
   document.querySelector('#fileName').textContent = showFile.files[0].name
 })
 
-//sumitting the form
+//submitting the form
 const submitPic = document.querySelector('#submitPic')
 submitPic.addEventListener('click', function(e){e.preventDefault()
 //HTML required attribute doesnt work so Im doing the validation manually
@@ -60,7 +61,7 @@ if (document.querySelector('#picTitle').value && document.querySelector('#picDes
                   <div class="card-body">
                     <h5 class="card-title">${document.querySelector('#picTitle').value}</h5>
                     <p class="card-text">${document.querySelector('#picDescription').value}</p>
-                    <a href="${url}" target="_blank" class="btn">Download</a>
+                    <a href="img/12.jpg" target="_blank" class="btn">Download</a>
                   </div>
                 </div>
               </div>`
