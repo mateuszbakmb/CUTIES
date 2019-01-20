@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', ()=>{
 //scrolling effect for nav items
 const nav = document.querySelector('nav');
 
@@ -72,3 +73,4 @@ if (document.querySelector('#picTitle').value && document.querySelector('#picDes
   } else {alert("All fields required!")}
 })
 console.log("If your recently added picture doesn't want to open in a new tab after clicking on 'download' button, try disabling your AdBlock")
+})
